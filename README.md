@@ -12,7 +12,7 @@ Usage example:
 ▶ cat urls.txt | bumenumurl
 ```
 ```
-▶ waybackurls *nubank.com.br | bumenumurl
+▶ waybackurls nubank.com.br | bumenumurl
 ```
 ```
 ▶ bumenumurl -f urls.txt -t 5 | grep 200
