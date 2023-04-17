@@ -1,5 +1,5 @@
 # bumenumurl
-Check urls, status code, capture urls from file or other program
+Check urls, status code, find string, capture urls from file or other program
 
 Use in conjunction with waybackurls to enumerate all urls, advanced use for `Redteam` and `Bugbounty`
 
@@ -16,6 +16,9 @@ Usage example:
 ```
 ```
 ▶ bumenumurl -f urls.txt -t 5 | grep 200
+```
+```
+▶ cat urls.txt | bumenumurl -t 50 -s "token"
 ```
 
 Install:
