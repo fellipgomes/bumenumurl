@@ -5,29 +5,24 @@ import concurrent.futures,argparse
 
 def Thread(get, sfind):
     headers = {'user-agent': 'fellipgomes/bumenumurl github'}
+    get = get.strip()
     try:
         if 'https' in get or 'http' in get:
-            get = get.strip()
             r = requests.get(get,headers=headers,timeout=30)
-            
             if sfind:
                 desc = r.text
                 for single_line in desc.splitlines():
-                    if sfind in desc:
-                        print(single_line)
+                    if sfind in single_line:
+                        print(f"[FOUND] - {get} - {single_line}")
             else:
-                msg=f"[FOUND] - {get}"
-                print(msg.replace('\n',''))
+                print(f"[{r.status_code}] - {get}")
         else:
-            get = get.strip()
             get = f"http://{get}"
             r = requests.get(get, headers=headers,timeout=30)
-            msg=f"[{r.status_code}] - {get}"
-            print(msg.replace('\n',''))
+            print(f"[{r.status_code}] - {get}")
     except Exception as e:
-        msg=f"[?] - {get}"
-        print(msg.replace('\n',''))
-        print(e)
+        get = get.strip()
+        print(f"[?] - {get}")
 
 def run(source, tt, sfind):
     if tt < 10:

@@ -1,1 +1,2 @@
 http://www.nubank.com.br/
+https://nuapp.nubank.com.br/bdc/omniknight/expr/shared.js?version=1680702510
